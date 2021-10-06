@@ -1,0 +1,57 @@
+#include <iostream>
+#include <ctime>
+#include <iomanip>
+#include <Windows.h>
+#include <conio.h>
+
+void cuenta(int vector[], int t, int n) {
+	int x = 0;
+	int l;
+	for (int i = 0; i < t; i++)
+	{
+		if (n == vector[i])
+		{
+			x++;
+			l = vector[i];
+		}
+	}
+	cout << "el numero" << setw(3) << l << "se repite" << setw(2) << x << "veces";
+}
+
+void elimina(int vec[], int t, int n) {
+	for(int i = 0; i < t; i++) {
+		if(n == vec[i]) {
+			vec[i] = 0;
+		}
+	}
+}
+ 
+
+using namespace std;
+
+int main()
+{
+	int vec[10];
+	int n;
+	srand(time(0));
+	for (int i = 0; i <=10 ; i++){
+		vec[i] = 1 + rand() % 15;
+
+	}
+
+	for (int i = 0; i <= 10; i++) {
+		cout << vec << "  ";
+	}cout << endl;
+
+
+	for (int i = 0; i <= 10; i++) {
+		n = vec[i]; 
+		if (n != 0) {
+			cuenta(vec, 10, n);
+		}
+
+	}
+
+
+	return 0;
+}
